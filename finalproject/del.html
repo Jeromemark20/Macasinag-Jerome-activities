@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Item - Inventory System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <h1>Inventory System</h1>
+            <button class="logout-button" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="inven.html">Inventory</a></li>
+                <li><a href="add.html">Add Item</a></li>
+                <li><a href="update.html">Update Item</a></li>
+                <li class="active"><a href="#">Delete Item</a></li>
+                
+            </ul>
+        </aside>
+
+        <main>
+            <h2>Delete Item</h2>
+            <form class="item-form" onsubmit="deleteItem(); return false;">
+                <label for="product-id">Product ID</label>
+                <input type="text" id="product-id" name="product-id" placeholder="Enter product ID" required>
+                <button type="submit" class="delete-button">Delete Item</button>
+            </form>
+        </main>
+    </div>
+
+    <script>
+        function logout() {
+            window.location.href = 'login.html';
+        }
+
+        function deleteItem() {
+            // Implement delete logic here
+            var productId = document.getElementById('product-id').value;
+            // Example: Perform deletion based on productId
+            console.log('Deleting product with ID:', productId);
+            // Add logic to delete the item using an API or backend process
+            alert('Item deleted successfully!');
+            // Optionally redirect to another page or refresh current page
+            // window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
